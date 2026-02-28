@@ -1,56 +1,1423 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Watered Garden Church — Where His Glory Flows</title>
-    <meta name="description" content="Watered Garden Church, Dansoman, Accra, Ghana. Founded by Prophet Prince Manasseh Atsu. Sunday services 8:45 AM and 11 AM." />
-    <meta property="og:title" content="Watered Garden Church — Where His Glory Flows" />
-    <meta property="og:description" content="35+ years of prophetic ministry in Ghana and beyond." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://kingjudecole.github.io/wateredgardenchurch/" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <style>
-      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-      body { background: #080808; color: #F5F0E8; font-family: sans-serif; }
-      #loading-screen {
-        position: fixed; inset: 0; background: #080808;
-        display: flex; flex-direction: column; align-items: center; justify-content: center;
-        z-index: 9999; transition: opacity 0.6s ease;
-      }
-      #loading-screen.fade-out { opacity: 0; pointer-events: none; }
-      .loading-logo {
-        width: 72px; height: 72px; border-radius: 50%;
-        background: linear-gradient(135deg, #D4AF37, #B8960C);
-        display: flex; align-items: center; justify-content: center;
-        font-size: 26px; font-weight: 800; color: #080808;
-        margin-bottom: 24px; letter-spacing: -1px;
-        animation: pulse 1.8s ease-in-out infinite;
-      }
-      .loading-text {
-        font-size: 10px; letter-spacing: 0.5em; text-transform: uppercase;
-        color: #D4AF37; opacity: 0.8;
-      }
-      @keyframes pulse {
-        0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(212,175,55,0.4); }
-        50% { transform: scale(1.06); box-shadow: 0 0 0 24px rgba(212,175,55,0); }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="loading-screen">
-      <div class="loading-logo">WG</div>
-      <div class="loading-text">Where His Glory Flows</div>
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<title>Watered Garden Church — Where His Glory Flows</title>
+<meta name="description" content="Watered Garden Church, Dansoman, Accra, Ghana. Founded 1989 by Prophet Prince Manasseh Atsu. Sunday services 8:45 AM and 11 AM."/>
+<meta property="og:title" content="Watered Garden Church — Where His Glory Flows"/>
+<meta property="og:description" content="35+ years of prophetic ministry in Ghana and beyond. Join us this Sunday."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://kingjudecole.github.io/wateredgardenchurch/"/>
+<meta property="og:image" content="https://raw.githubusercontent.com/kingjudecole/wgc-media/main/Our_Year_Of_Souls.jpg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --navy: #0B1E2D;
+  --navy-light: #132840;
+  --gold: #C9A84C;
+  --gold-light: #E8C96A;
+  --gold-dark: #A07C2E;
+  --cream: #F8F4ED;
+  --white: #FFFFFF;
+  --black: #060E15;
+  --gray: #8A9BAA;
+  --gray-light: #E8EDF2;
+  --success: #2ECC71;
+  --nav-height: 68px;
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--black);
+  color:var(--cream);
+  overflow-x:hidden;
+  padding-bottom:calc(var(--nav-height) + var(--safe-bottom));
+}
+
+/* ─── TYPOGRAPHY ─── */
+.display{font-family:'Cinzel',serif;}
+.serif{font-family:'Playfair Display',serif;}
+
+/* ─── SCROLLBAR ─── */
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-track{background:var(--navy);}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px;}
+
+/* ─── LOADING SCREEN ─── */
+#loader{
+  position:fixed;inset:0;background:var(--black);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  z-index:9999;transition:opacity .6s ease, visibility .6s ease;
+}
+#loader.hide{opacity:0;visibility:hidden;}
+.loader-logo{
+  width:80px;height:80px;border-radius:50%;overflow:hidden;
+  border:2px solid var(--gold);margin-bottom:20px;
+  animation:pulse-ring 2s ease-in-out infinite;
+}
+.loader-logo img{width:100%;height:100%;object-fit:cover;}
+.loader-text{
+  font-family:'Cinzel',serif;font-size:11px;letter-spacing:.6em;
+  color:var(--gold);text-transform:uppercase;margin-bottom:32px;
+}
+.loader-bar{width:120px;height:2px;background:rgba(201,168,76,.2);border-radius:1px;overflow:hidden;}
+.loader-fill{height:100%;background:var(--gold);border-radius:1px;animation:load 1.5s ease forwards;}
+@keyframes load{from{width:0}to{width:100%}}
+@keyframes pulse-ring{
+  0%,100%{box-shadow:0 0 0 0 rgba(201,168,76,.4);}
+  50%{box-shadow:0 0 0 20px rgba(201,168,76,0);}
+}
+
+/* ─── TOP HEADER ─── */
+#header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  height:60px;padding:0 20px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(6,14,21,.92);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(201,168,76,.15);
+  transition:all .3s ease;
+}
+#header.scrolled{background:rgba(6,14,21,.98);}
+.header-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.header-logo-img{width:36px;height:36px;border-radius:50%;object-fit:cover;border:1px solid var(--gold);}
+.header-logo-text{font-family:'Cinzel',serif;font-size:13px;color:var(--gold);letter-spacing:.05em;line-height:1.2;}
+.header-logo-sub{font-size:9px;color:var(--gray);letter-spacing:.08em;font-family:'DM Sans',sans-serif;}
+.header-cta{
+  background:var(--gold);color:var(--black);
+  border:none;padding:8px 16px;border-radius:20px;
+  font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;
+  letter-spacing:.05em;cursor:pointer;transition:all .2s ease;
+  text-decoration:none;display:flex;align-items:center;gap:6px;
+}
+.header-cta:hover{background:var(--gold-light);transform:translateY(-1px);}
+
+/* ─── PAGES ─── */
+.page{
+  min-height:100vh;padding-top:60px;
+  display:none;animation:fadeIn .4s ease;
+}
+.page.active{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* ─── HERO ─── */
+#hero-section{
+  position:relative;height:calc(100vh - 60px);
+  overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background-image:url('https://raw.githubusercontent.com/kingjudecole/wgc-media/main/IPic_1.jpg');
+  background-size:cover;background-position:center top;
+  transform:scale(1.05);transition:transform 8s ease;
+}
+.hero-bg.loaded{transform:scale(1);}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(
+    to bottom,
+    rgba(6,14,21,.3) 0%,
+    rgba(6,14,21,.1) 40%,
+    rgba(6,14,21,.7) 70%,
+    rgba(6,14,21,.97) 100%
+  );
+}
+.hero-content{
+  position:relative;z-index:2;
+  padding:0 24px 32px;
+}
+.hero-year-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.3);
+  border-radius:20px;padding:6px 14px;margin-bottom:16px;
+}
+.hero-year-badge span{font-size:11px;letter-spacing:.1em;color:var(--gold);text-transform:uppercase;font-weight:500;}
+.hero-year-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:blink 2s ease infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.3;}}
+.hero-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(36px,9vw,64px);
+  line-height:1.05;font-weight:900;
+  color:var(--white);margin-bottom:8px;
+}
+.hero-title .gold{color:var(--gold);}
+.hero-title .italic{font-style:italic;}
+.hero-sub{
+  font-size:14px;color:rgba(248,244,237,.7);
+  margin-bottom:24px;letter-spacing:.02em;
+}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-primary{
+  background:var(--gold);color:var(--black);
+  border:none;padding:14px 24px;border-radius:30px;
+  font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;
+  letter-spacing:.04em;cursor:pointer;transition:all .25s ease;
+  text-decoration:none;display:inline-flex;align-items:center;gap:8px;
+}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,168,76,.35);}
+.btn-outline{
+  background:transparent;color:var(--cream);
+  border:1.5px solid rgba(248,244,237,.35);
+  padding:14px 24px;border-radius:30px;
+  font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;
+  cursor:pointer;transition:all .25s ease;
+  text-decoration:none;display:inline-flex;align-items:center;gap:8px;
+}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);}
+
+/* ─── SERVICE TICKER ─── */
+.service-ticker{
+  background:rgba(11,30,45,.9);border-top:1px solid rgba(201,168,76,.2);
+  border-bottom:1px solid rgba(201,168,76,.2);
+  padding:10px 0;overflow:hidden;position:relative;
+}
+.ticker-inner{
+  display:flex;gap:0;width:max-content;
+  animation:ticker 20s linear infinite;
+}
+.ticker-item{
+  display:flex;align-items:center;gap:8px;
+  padding:0 32px;white-space:nowrap;
+  font-size:12px;color:rgba(248,244,237,.7);
+  border-right:1px solid rgba(201,168,76,.2);
+}
+.ticker-item .gold-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ─── STATS BAR ─── */
+.stats-bar{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  background:var(--navy);padding:20px 16px;
+  border-bottom:1px solid rgba(201,168,76,.1);
+}
+.stat-item{text-align:center;padding:8px 4px;}
+.stat-num{
+  font-family:'Playfair Display',serif;font-size:22px;font-weight:700;
+  color:var(--gold);line-height:1;margin-bottom:4px;
+}
+.stat-label{font-size:10px;color:var(--gray);letter-spacing:.06em;text-transform:uppercase;}
+
+/* ─── SECTION STYLES ─── */
+.section{padding:56px 24px;}
+.section-tag{
+  font-size:11px;letter-spacing:.15em;color:var(--gold);
+  text-transform:uppercase;font-weight:600;margin-bottom:10px;
+  display:flex;align-items:center;gap:8px;
+}
+.section-tag::before{content:'';width:24px;height:1px;background:var(--gold);}
+.section-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(28px,7vw,44px);font-weight:700;
+  line-height:1.15;margin-bottom:16px;color:var(--white);
+}
+.section-title .italic{font-style:italic;color:var(--gold);}
+.section-body{
+  font-size:15px;line-height:1.75;
+  color:rgba(248,244,237,.7);max-width:600px;
+}
+.gold-line{
+  width:48px;height:2px;background:var(--gold);
+  margin:20px 0;border-radius:1px;
+}
+
+/* ─── ABOUT PAGE ─── */
+.prophet-card{
+  position:relative;border-radius:20px;overflow:hidden;
+  margin-bottom:32px;aspect-ratio:3/4;
+}
+.prophet-card img{width:100%;height:100%;object-fit:cover;}
+.prophet-card-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top, rgba(6,14,21,.95) 0%, rgba(6,14,21,.1) 60%);
+}
+.prophet-card-info{
+  position:absolute;bottom:0;left:0;right:0;padding:24px;
+}
+.prophet-name{
+  font-family:'Playfair Display',serif;font-size:22px;font-weight:700;
+  color:var(--white);margin-bottom:4px;
+}
+.prophet-title{font-size:12px;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;}
+
+.values-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px;}
+.value-card{
+  background:var(--navy);border-radius:16px;padding:20px;
+  border:1px solid rgba(201,168,76,.1);transition:all .3s ease;
+}
+.value-card:hover{border-color:rgba(201,168,76,.3);transform:translateY(-2px);}
+.value-icon{font-size:24px;margin-bottom:10px;}
+.value-title{font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px;letter-spacing:.03em;}
+.value-text{font-size:12px;color:var(--gray);line-height:1.6;}
+
+/* ─── SERVICES PAGE ─── */
+.service-card{
+  background:var(--navy);border-radius:20px;
+  border:1px solid rgba(201,168,76,.1);
+  overflow:hidden;margin-bottom:16px;
+  transition:all .3s ease;
+}
+.service-card:hover{border-color:rgba(201,168,76,.3);}
+.service-card.featured{border-color:var(--gold);background:linear-gradient(135deg,var(--navy-light),var(--navy));}
+.service-card-header{
+  padding:20px 20px 0;display:flex;
+  justify-content:space-between;align-items:flex-start;
+}
+.service-day{
+  font-size:11px;letter-spacing:.1em;color:var(--gold);
+  text-transform:uppercase;font-weight:600;margin-bottom:4px;
+}
+.service-name{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--white);}
+.service-badge{
+  background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.3);
+  border-radius:12px;padding:4px 12px;
+  font-size:11px;color:var(--gold);white-space:nowrap;
+}
+.service-badge.live{background:rgba(46,204,113,.15);border-color:rgba(46,204,113,.3);color:var(--success);}
+.service-card-body{padding:12px 20px 20px;}
+.service-time{
+  display:flex;align-items:center;gap:8px;
+  font-size:24px;font-weight:700;color:var(--gold);
+  font-family:'Playfair Display',serif;margin-bottom:8px;
+}
+.service-desc{font-size:13px;color:var(--gray);line-height:1.6;}
+.service-action{
+  margin:12px 20px 20px;padding:12px;
+  background:rgba(201,168,76,.08);border-radius:12px;
+  display:flex;align-items:center;justify-content:space-between;
+  text-decoration:none;transition:all .2s ease;
+}
+.service-action:hover{background:rgba(201,168,76,.15);}
+.service-action span{font-size:13px;color:var(--gold);font-weight:500;}
+.service-action svg{color:var(--gold);}
+
+.programs-section{margin-top:40px;}
+.program-card{
+  display:flex;gap:16px;padding:16px 0;
+  border-bottom:1px solid rgba(201,168,76,.08);
+}
+.program-card:last-child{border-bottom:none;}
+.program-icon{
+  width:48px;height:48px;border-radius:12px;
+  background:linear-gradient(135deg,rgba(201,168,76,.2),rgba(201,168,76,.05));
+  border:1px solid rgba(201,168,76,.2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;flex-shrink:0;
+}
+.program-info{flex:1;}
+.program-name{font-size:15px;font-weight:600;color:var(--white);margin-bottom:4px;}
+.program-desc{font-size:13px;color:var(--gray);line-height:1.5;}
+
+/* ─── MEDIA/GALLERY PAGE ─── */
+.media-tabs{
+  display:flex;gap:0;background:var(--navy);
+  border-radius:12px;padding:4px;margin-bottom:24px;
+  border:1px solid rgba(201,168,76,.1);
+}
+.media-tab{
+  flex:1;padding:10px;border-radius:9px;
+  background:transparent;border:none;cursor:pointer;
+  font-family:'DM Sans',sans-serif;font-size:13px;
+  color:var(--gray);transition:all .2s ease;font-weight:500;
+}
+.media-tab.active{background:var(--gold);color:var(--black);font-weight:700;}
+
+.gallery-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:10px;
+}
+.gallery-item{
+  border-radius:16px;overflow:hidden;aspect-ratio:1;
+  cursor:pointer;position:relative;
+  transition:transform .3s ease;
+}
+.gallery-item:first-child{grid-column:span 2;aspect-ratio:16/9;}
+.gallery-item:hover{transform:scale(1.02);}
+.gallery-item img{width:100%;height:100%;object-fit:cover;}
+.gallery-item-overlay{
+  position:absolute;inset:0;background:rgba(6,14,21,0);
+  transition:background .3s ease;
+  display:flex;align-items:center;justify-content:center;
+}
+.gallery-item:hover .gallery-item-overlay{background:rgba(6,14,21,.4);}
+
+.events-list{display:none;}
+.events-list.active{display:block;}
+.gallery-grid.active{display:grid;}
+.gallery-grid{display:none;}
+
+.event-card{
+  background:var(--navy);border-radius:20px;overflow:hidden;
+  margin-bottom:16px;border:1px solid rgba(201,168,76,.1);
+  transition:all .3s ease;
+}
+.event-card:hover{border-color:rgba(201,168,76,.3);}
+.event-card img{width:100%;height:180px;object-fit:cover;}
+.event-card-body{padding:16px;}
+.event-tag{
+  font-size:10px;letter-spacing:.1em;color:var(--gold);
+  text-transform:uppercase;font-weight:600;margin-bottom:6px;
+}
+.event-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--white);margin-bottom:8px;}
+.event-desc{font-size:13px;color:var(--gray);line-height:1.6;}
+
+/* ─── BOOKS PAGE ─── */
+.books-header-img{
+  width:100%;border-radius:20px;overflow:hidden;
+  margin-bottom:32px;
+}
+.books-header-img img{width:100%;display:block;}
+
+.books-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+.book-card{
+  background:var(--navy);border-radius:16px;overflow:hidden;
+  border:1px solid rgba(201,168,76,.1);transition:all .3s ease;
+}
+.book-card:hover{transform:translateY(-4px);border-color:rgba(201,168,76,.3);box-shadow:0 12px 32px rgba(0,0,0,.4);}
+.book-cover{aspect-ratio:2/3;overflow:hidden;}
+.book-cover img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease;}
+.book-card:hover .book-cover img{transform:scale(1.05);}
+.book-info{padding:12px;}
+.book-title{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--white);line-height:1.3;margin-bottom:6px;}
+.book-author{font-size:11px;color:var(--gold);}
+.book-btn{
+  display:block;margin:8px;padding:10px;
+  background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.2);
+  border-radius:10px;text-align:center;text-decoration:none;
+  font-size:12px;color:var(--gold);font-weight:600;
+  transition:all .2s ease;
+}
+.book-btn:hover{background:var(--gold);color:var(--black);}
+
+.amazon-banner{
+  width:100%;border-radius:16px;overflow:hidden;
+  margin-top:24px;cursor:pointer;
+  transition:transform .2s ease;
+}
+.amazon-banner:hover{transform:scale(1.01);}
+.amazon-banner img{width:100%;display:block;}
+
+/* ─── CONTACT PAGE ─── */
+.contact-hero{
+  position:relative;border-radius:20px;overflow:hidden;
+  margin-bottom:32px;height:200px;
+}
+.contact-hero img{width:100%;height:100%;object-fit:cover;}
+.contact-hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(11,30,45,.9),rgba(201,168,76,.3));
+  display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;text-align:center;
+}
+.contact-hero-title{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--white);margin-bottom:8px;}
+.contact-hero-sub{font-size:13px;color:rgba(248,244,237,.8);}
+
+.contact-methods{display:flex;flex-direction:column;gap:12px;margin-bottom:32px;}
+.contact-card{
+  display:flex;align-items:center;gap:16px;
+  background:var(--navy);border-radius:16px;padding:16px 20px;
+  border:1px solid rgba(201,168,76,.1);text-decoration:none;
+  transition:all .2s ease;
+}
+.contact-card:hover{border-color:var(--gold);transform:translateX(4px);}
+.contact-icon{
+  width:44px;height:44px;border-radius:12px;
+  background:linear-gradient(135deg,rgba(201,168,76,.2),rgba(201,168,76,.05));
+  border:1px solid rgba(201,168,76,.2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;flex-shrink:0;
+}
+.contact-info{flex:1;}
+.contact-label{font-size:11px;color:var(--gold);letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin-bottom:2px;}
+.contact-value{font-size:15px;color:var(--white);font-weight:500;}
+
+.social-section{margin-bottom:32px;}
+.social-title{font-size:14px;font-weight:600;color:var(--cream);margin-bottom:16px;letter-spacing:.03em;}
+.social-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.social-btn{
+  background:var(--navy);border:1px solid rgba(201,168,76,.1);
+  border-radius:14px;padding:14px 10px;
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  text-decoration:none;transition:all .2s ease;
+}
+.social-btn:hover{border-color:var(--gold);transform:translateY(-2px);}
+.social-btn span{font-size:22px;}
+.social-btn small{font-size:11px;color:var(--gray);font-weight:500;}
+
+.branches-section{margin-top:32px;}
+.branch-item{
+  display:flex;gap:12px;padding:16px;
+  background:var(--navy);border-radius:14px;
+  border:1px solid rgba(201,168,76,.1);margin-bottom:10px;
+}
+.branch-flag{font-size:24px;flex-shrink:0;padding-top:2px;}
+.branch-info{flex:1;}
+.branch-name{font-size:14px;font-weight:600;color:var(--white);margin-bottom:2px;}
+.branch-location{font-size:12px;color:var(--gold);}
+.branch-lead{font-size:12px;color:var(--gray);margin-top:2px;}
+
+/* ─── TESTIMONIES ─── */
+.testimony-scroll{
+  display:flex;gap:16px;overflow-x:auto;padding:4px 0 16px;
+  scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+}
+.testimony-scroll::-webkit-scrollbar{display:none;}
+.testimony-card{
+  min-width:280px;background:var(--navy);
+  border-radius:20px;padding:20px;
+  border:1px solid rgba(201,168,76,.1);
+  scroll-snap-align:start;flex-shrink:0;
+}
+.testimony-stars{font-size:14px;margin-bottom:12px;}
+.testimony-text{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:14px;line-height:1.7;color:rgba(248,244,237,.85);
+  margin-bottom:16px;
+}
+.testimony-author{display:flex;align-items:center;gap:10px;}
+.testimony-avatar{
+  width:36px;height:36px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold-dark),var(--gold));
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;font-weight:700;color:var(--black);flex-shrink:0;
+}
+.testimony-name{font-size:13px;font-weight:600;color:var(--white);}
+.testimony-role{font-size:11px;color:var(--gold);}
+
+/* ─── BOTTOM NAVIGATION ─── */
+#bottom-nav{
+  position:fixed;bottom:0;left:0;right:0;z-index:100;
+  height:var(--nav-height);
+  background:rgba(6,14,21,.97);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-top:1px solid rgba(201,168,76,.15);
+  display:flex;align-items:stretch;
+  padding-bottom:var(--safe-bottom);
+}
+.nav-item{
+  flex:1;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:4px;
+  background:transparent;border:none;cursor:pointer;
+  transition:all .2s ease;padding:8px 4px;
+  text-decoration:none;
+}
+.nav-item.active .nav-icon{color:var(--gold);}
+.nav-item.active .nav-label{color:var(--gold);}
+.nav-item:not(.active):hover .nav-icon{color:rgba(248,244,237,.7);}
+.nav-icon{font-size:22px;line-height:1;color:rgba(248,244,237,.35);transition:color .2s ease;}
+.nav-label{font-size:10px;color:rgba(248,244,237,.35);font-weight:500;letter-spacing:.03em;transition:color .2s ease;}
+.nav-item.active .nav-icon-wrap{
+  width:40px;height:40px;background:rgba(201,168,76,.12);
+  border:1px solid rgba(201,168,76,.25);border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;margin-bottom:2px;
+}
+
+/* ─── FLOATING WHATSAPP ─── */
+#whatsapp-fab{
+  position:fixed;right:20px;bottom:calc(var(--nav-height) + 16px + var(--safe-bottom));
+  width:52px;height:52px;border-radius:50%;z-index:99;
+  background:#25D366;box-shadow:0 4px 20px rgba(37,211,102,.4);
+  display:flex;align-items:center;justify-content:center;
+  text-decoration:none;transition:all .3s ease;
+  animation:float 3s ease-in-out infinite;
+}
+#whatsapp-fab:hover{transform:scale(1.1);box-shadow:0 8px 28px rgba(37,211,102,.5);}
+@keyframes float{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-6px);}
+}
+#whatsapp-fab svg{width:26px;height:26px;fill:white;}
+
+/* ─── LIVE INDICATOR ─── */
+.live-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.3);
+  border-radius:12px;padding:4px 10px;
+  font-size:11px;color:#EF4444;font-weight:600;
+}
+.live-dot{width:6px;height:6px;border-radius:50%;background:#EF4444;animation:blink 1s ease infinite;}
+
+/* ─── PRAYER BANNER ─── */
+.prayer-banner{
+  background:linear-gradient(135deg,var(--navy-light),var(--navy));
+  border:1px solid rgba(201,168,76,.2);border-radius:20px;
+  padding:28px 24px;text-align:center;margin:32px 24px;
+}
+.prayer-banner-icon{font-size:40px;margin-bottom:12px;}
+.prayer-banner-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--white);margin-bottom:8px;}
+.prayer-banner-text{font-size:14px;color:var(--gray);line-height:1.6;margin-bottom:20px;}
+
+/* ─── UTILITY ─── */
+.divider{height:1px;background:rgba(201,168,76,.08);margin:0 24px;}
+.text-gold{color:var(--gold);}
+.mt-4{margin-top:16px;}
+.mt-8{margin-top:32px;}
+.hidden{display:none!important;}
+
+/* ─── LIGHTBOX ─── */
+#lightbox{
+  position:fixed;inset:0;z-index:1000;
+  background:rgba(0,0,0,.95);
+  display:none;align-items:center;justify-content:center;
+  padding:20px;
+}
+#lightbox.open{display:flex;}
+#lightbox img{max-width:100%;max-height:90vh;border-radius:12px;object-fit:contain;}
+#lightbox-close{
+  position:absolute;top:20px;right:20px;
+  background:rgba(255,255,255,.1);border:none;border-radius:50%;
+  width:44px;height:44px;color:white;font-size:20px;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+}
+
+/* ─── RESPONSIVE ─── */
+@media(min-width:768px){
+  .books-grid{grid-template-columns:repeat(4,1fr);}
+  .gallery-grid{grid-template-columns:repeat(3,1fr);}
+  .gallery-grid .gallery-item:first-child{grid-column:span 2;}
+  .stats-bar{padding:24px 40px;}
+  .section{padding:64px 40px;}
+  .hero-content{padding:0 40px 48px;}
+  #header{padding:0 40px;}
+  .values-grid{grid-template-columns:repeat(4,1fr);}
+}
+@media(min-width:1024px){
+  #bottom-nav{display:none;}
+  body{padding-bottom:0;}
+  #whatsapp-fab{bottom:32px;}
+  /* Desktop top nav */
+  #header{height:72px;}
+  .page{padding-top:72px;}
+  .desktop-nav{display:flex!important;}
+}
+.desktop-nav{display:none;gap:8px;align-items:center;}
+.desktop-nav-item{
+  background:transparent;border:none;padding:8px 16px;
+  font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;
+  color:rgba(248,244,237,.65);cursor:pointer;border-radius:8px;
+  transition:all .2s ease;
+}
+.desktop-nav-item.active,.desktop-nav-item:hover{color:var(--gold);background:rgba(201,168,76,.08);}
+</style>
+</head>
+<body>
+
+<!-- LOADING SCREEN -->
+<div id="loader">
+  <div class="loader-logo">
+    <img src="https://raw.githubusercontent.com/kingjudecole/wgc-media/main/Logo.png" alt="WGC" onerror="this.style.display='none';this.parentElement.style.background='var(--gold)';this.parentElement.innerHTML='<span style=\'font-family:Cinzel,serif;font-weight:700;color:#060E15;font-size:22px;\'>WG</span>'"/>
+  </div>
+  <div class="loader-text">Where His Glory Flows</div>
+  <div class="loader-bar"><div class="loader-fill"></div></div>
+</div>
+
+<!-- TOP HEADER -->
+<header id="header">
+  <a class="header-logo" href="#" onclick="navigate('home');return false;">
+    <img class="header-logo-img" src="https://raw.githubusercontent.com/kingjudecole/wgc-media/main/Logo.png" alt="WGC" onerror="this.style.display='none'"/>
+    <div>
+      <div class="header-logo-text">Watered Garden</div>
+      <div class="header-logo-sub">Church · Accra, Ghana</div>
     </div>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-    <script>
-      window.addEventListener('load', () => {
-        setTimeout(() => {
-          const s = document.getElementById('loading-screen');
-          if (s) { s.classList.add('fade-out'); setTimeout(() => s.remove(), 600); }
-        }, 1000);
-      });
-    </script>
-  </body>
+  </a>
+  <nav class="desktop-nav">
+    <button class="desktop-nav-item active" onclick="navigate('home')">Home</button>
+    <button class="desktop-nav-item" onclick="navigate('about')">About</button>
+    <button class="desktop-nav-item" onclick="navigate('services')">Services</button>
+    <button class="desktop-nav-item" onclick="navigate('media')">Media</button>
+    <button class="desktop-nav-item" onclick="navigate('books')">Books</button>
+    <button class="desktop-nav-item" onclick="navigate('contact')">Contact</button>
+  </nav>
+  <a class="header-cta" href="https://wa.me/233243087949?text=Hello%2C%20I%27d%20like%20to%20plan%20my%20visit%20to%20Watered%20Garden%20Church" target="_blank">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Plan Visit
+  </a>
+</header>
+
+<!-- ══════════════════════════════════════════════
+     PAGE: HOME
+══════════════════════════════════════════════ -->
+<div id="page-home" class="page active">
+
+  <!-- HERO -->
+  <section id="hero-section">
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-year-badge">
+        <div class="dot"></div>
+        <span>Our Year of Souls · Mark 16:15–20</span>
+      </div>
+      <h1 class="hero-title">
+        Watered<br/>
+        <span class="italic gold">Garden</span><br/>
+        Church
+      </h1>
+      <p class="hero-sub">Dansoman, Accra, Ghana · Founded 1989</p>
+      <div class="hero-actions">
+        <a href="https://wa.me/233243087949?text=Hello%2C%20I%27d%20like%20to%20plan%20my%20visit%20to%20Watered%20Garden%20Church" target="_blank" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Plan Your Visit
+        </a>
+        <button class="btn-outline" onclick="navigate('services')">
+          Service Times
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="service-ticker">
+    <div class="ticker-inner" id="ticker">
+      <div class="ticker-item"><span class="gold-dot"></span>Sunday First Service — 8:45 AM</div>
+      <div class="ticker-item"><span class="gold-dot"></span>Sunday Second Service — 11:00 AM</div>
+      <div class="ticker-item"><span class="gold-dot"></span>Monday Prophetic — 10:00 AM</div>
+      <div class="ticker-item"><span class="gold-dot"></span>Daily Meetings Tue–Fri — 9:00 AM</div>
+      <div class="ticker-item"><span class="gold-dot"></span>A 982/17, Dansoman Roundabout, Accra</div>
+      <div class="ticker-item"><span class="gold-dot"></span>Sunday First Service — 8:45 AM</div>
+      <div class="ticker-item"><span class="gold-dot"></span>Sunday Second Service — 11:00 AM</div>
+      <div class="ticker-item"><span class="gold-dot"></span>Monday Prophetic — 10:00 AM</div>
+      <div class="ticker-item"><span class="gold-dot"></span>Daily Meetings Tue–Fri — 9:00 AM</div>
+      <div class="ticker-item"><span class="gold-dot"></span>A 982/17, Dansoman Roundabout, Accra</div>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-num" data-count="35">0</div>
+      <div class="stat-label">Years</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num" data-count="50000" data-suffix="+">0</div>
+      <div class="stat-label">Souls Won</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num" data-count="50" data-suffix="+">0</div>
+      <div class="stat-label">Communities</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num" data-count="6">0</div>
+      <div class="stat-label">Nations</div>
+    </div>
+  </div>
+
+  <!-- MISSION SNIPPET -->
+  <section class="section">
+    <div class="section-tag">Our Mission</div>
+    <h2 class="section-title">Manifesting <span class="italic">God's Glory</span><br/>In Every Soul</h2>
+    <div class="gold-line"></div>
+    <p class="section-body">To manifest the glory of God in every sphere of human existence — bringing healing, purpose, and divine order through the uncompromising teaching of God's Word. From Dansoman to the nations.</p>
+    <div class="mt-4">
+      <button class="btn-outline" onclick="navigate('about')" style="margin-top:16px;">Our Full Story →</button>
+    </div>
+  </section>
+
+  <!-- TESTIMONIES -->
+  <section style="padding:0 0 32px;">
+    <div style="padding:0 24px;margin-bottom:16px;">
+      <div class="section-tag">Testimonies</div>
+      <h3 class="section-title" style="font-size:clamp(22px,5vw,32px);">Lives <span class="italic">Transformed</span></h3>
+    </div>
+    <div class="testimony-scroll" style="padding:4px 24px 16px;">
+      <div class="testimony-card">
+        <div class="testimony-stars">⭐⭐⭐⭐⭐</div>
+        <p class="testimony-text">"I came in a wheelchair and left walking. Prophet Manasseh prayed for me during the Monday Prophetic Service. God is real and His glory flows at Watered Garden."</p>
+        <div class="testimony-author">
+          <div class="testimony-avatar">AK</div>
+          <div><div class="testimony-name">Abena Korantema</div><div class="testimony-role">Member since 2018 · Kumasi</div></div>
+        </div>
+      </div>
+      <div class="testimony-card">
+        <div class="testimony-stars">⭐⭐⭐⭐⭐</div>
+        <p class="testimony-text">"My business was collapsing and my marriage was breaking. After three prophetic sessions, everything turned around. This church carries genuine glory."</p>
+        <div class="testimony-author">
+          <div class="testimony-avatar">EO</div>
+          <div><div class="testimony-name">Emmanuel Ofori</div><div class="testimony-role">Businessman · Accra</div></div>
+        </div>
+      </div>
+      <div class="testimony-card">
+        <div class="testimony-stars">⭐⭐⭐⭐⭐</div>
+        <p class="testimony-text">"I flew from London specifically to attend the Jesus Crusade. The prophetic accuracy of Prophet Manasseh Atsu is unlike anything I have ever experienced."</p>
+        <div class="testimony-author">
+          <div class="testimony-avatar">GP</div>
+          <div><div class="testimony-name">Grace Pietersen</div><div class="testimony-role">WGC London Branch</div></div>
+        </div>
+      </div>
+      <div class="testimony-card">
+        <div class="testimony-stars">⭐⭐⭐⭐⭐</div>
+        <p class="testimony-text">"My daughter was diagnosed with a condition the doctors said was permanent. After the 5 Days of Glory programme, she was completely healed. Glory to God."</p>
+        <div class="testimony-author">
+          <div class="testimony-avatar">MA</div>
+          <div><div class="testimony-name">Maame Asante</div><div class="testimony-role">Member since 2015 · Tema</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRAYER BANNER -->
+  <div class="prayer-banner">
+    <div class="prayer-banner-icon">🙏</div>
+    <h3 class="prayer-banner-title">Send Us Your Prayer Request</h3>
+    <p class="prayer-banner-text">The altar is always open. Submit your request and our prayer team will stand in faith with you.</p>
+    <a href="https://wa.me/233243087949?text=Hello%2C%20I%20have%20a%20prayer%20request%3A%20" target="_blank" class="btn-primary" style="display:inline-flex;">
+      Send Prayer Request
+    </a>
+  </div>
+
+  <!-- YEAR OF SOULS GRAPHIC -->
+  <section style="padding:0 24px 40px;">
+    <div style="border-radius:20px;overflow:hidden;cursor:pointer;" onclick="openLightbox('https://raw.githubusercontent.com/kingjudecole/wgc-media/main/Our_Year_Of_Souls.jpg')">
+      <img src="https://raw.githubusercontent.com/kingjudecole/wgc-media/main/Our_Year_Of_Souls.jpg" style="width:100%;display:block;border-radius:20px;" alt="Our Year of Souls 2025"/>
+    </div>
+  </section>
+
+</div><!-- END HOME -->
+
+<!-- ══════════════════════════════════════════════
+     PAGE: ABOUT
+══════════════════════════════════════════════ -->
+<div id="page-about" class="page">
+  <section class="section">
+    <div class="section-tag">Our Overseer</div>
+    <h2 class="section-title">Prophet Prince<br/><span class="italic">Manasseh Atsu</span></h2>
+    <div class="gold-line"></div>
+
+    <div class="prophet-card">
+      <img src="https://raw.githubusercontent.com/kingjudecole/wgc-media/main/IPic_1.jpg" alt="Prophet Prince Manasseh Atsu" onerror="this.src='https://raw.githubusercontent.com/kingjudecole/wgc-media/main/Pic_1.jpg'"/>
+      <div class="prophet-card-overlay"></div>
+      <div class="prophet-card-info">
+        <div class="prophet-name">Prophet Prince Manasseh Atsu</div>
+        <div class="prophet-title">Founder & Overseer · Watered Garden Church</div>
+      </div>
+    </div>
+
+    <p class="section-body">Prophet Prince Manasseh Atsu is a prophetic minister of uncommon precision and anointing. Called from an early age, he has devoted over three decades to building the Kingdom of God through the gifts of prophecy, healing, and the uncompromising teaching of the Word.</p>
+    <p class="section-body" style="margin-top:16px;">Under his leadership, Watered Garden Church has grown from a small fellowship in Dansoman to an international ministry with branches across Ghana, the United Kingdom, and the United States.</p>
+
+    <div class="mt-8">
+      <div class="section-tag">Our History</div>
+      <h3 class="section-title" style="font-size:clamp(22px,5vw,32px);">35+ Years of <span class="italic">Glory</span></h3>
+      <p class="section-body">Founded in 1989 in Dansoman, Accra, Watered Garden Church began as a prophetic fellowship with a mandate to manifest God's glory in every sphere of human existence. Today that mandate has carried the ministry to 6 nations and reached over 50,000 souls.</p>
+    </div>
+
+    <div class="values-grid mt-8">
+      <div class="value-card">
+        <div class="value-icon">⚡</div>
+        <div class="value-title">Prophetic Ministry</div>
+        <div class="value-text">Operating in the gift of prophecy with precision and integrity.</div>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🌍</div>
+        <div class="value-title">Operation Church Everywhere</div>
+        <div class="value-text">A global mandate to plant the Kingdom in every community.</div>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">❤️</div>
+        <div class="value-title">Healing & Restoration</div>
+        <div class="value-text">Supernatural healing for the body, mind, and spirit.</div>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">📖</div>
+        <div class="value-title">Word-Based Teaching</div>
+        <div class="value-text">Uncompromising, practical, life-transforming Bible teaching.</div>
+      </div>
+    </div>
+
+    <div class="mt-8">
+      <img src="https://raw.githubusercontent.com/kingjudecole/wgc-media/main/pic_3.jpg" style="width:100%;border-radius:20px;display:block;" alt="Jesus Crusade"/>
+      <p style="font-size:12px;color:var(--gray);margin-top:8px;text-align:center;">Jesus Crusade — Dansoman, Accra</p>
+    </div>
+
+    <div class="mt-8">
+      <img src="https://raw.githubusercontent.com/kingjudecole/wgc-media/main/pic_6.jpg" style="width:100%;border-radius:20px;display:block;" alt="Leadership Team"/>
+      <p style="font-size:12px;color:var(--gray);margin-top:8px;text-align:center;">Watered Garden Church Leadership</p>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     PAGE: SERVICES
+══════════════════════════════════════════════ -->
+<div id="page-services" class="page">
+  <section class="section">
+    <div class="section-tag">Join Us</div>
+    <h2 class="section-title">Service <span class="italic">Schedule</span></h2>
+    <div class="gold-line"></div>
+    <p class="section-body" style="margin-bottom:32px;">Every gathering is a divine appointment. Choose yours — and come expectant.</p>
+
+    <div class="service-card featured" id="sundayCard1">
+      <div class="service-card-header">
+        <div>
+          <div class="service-day">Sunday</div>
+          <div class="service-name">First Service</div>
+        </div>
+        <div class="service-badge" id="liveIndicator1">Featured</div>
+      </div>
+      <div class="service-card-body">
+        <div class="service-time">⭐ 8:45 – 10:45 AM</div>
+        <div class="service-desc">Our flagship morning service. Come expecting a prophetic word, powerful worship, and life-transforming teaching from the Word of God.</div>
+      </div>
+      <a href="https://wa.me/233243087949?text=Hello%2C%20I%27d%20like%20to%20attend%20the%20Sunday%20First%20Service%20at%208:45%20AM" target="_blank" class="service-action">
+        <span>Plan to Attend →</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+    <div class="service-card" id="sundayCard2">
+      <div class="service-card-header">
+        <div>
+          <div class="service-day">Sunday</div>
+          <div class="service-name">Second Service</div>
+        </div>
+        <div class="service-badge">Morning</div>
+      </div>
+      <div class="service-card-body">
+        <div class="service-time">🙏 11:00 AM – 1:00 PM</div>
+        <div class="service-desc">The second outpouring of the morning. Same fire, same Word, different experience. Great for families and those coming from further.</div>
+      </div>
+      <a href="https://wa.me/233243087949?text=Hello%2C%20I%27d%20like%20to%20attend%20the%20Sunday%20Second%20Service%20at%2011%3A00%20AM" target="_blank" class="service-action">
+        <span>Plan to Attend →</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+    <div class="service-card">
+      <div class="service-card-header">
+        <div>
+          <div class="service-day">Monday</div>
+          <div class="service-name">Prophetic Service</div>
+        </div>
+        <div class="service-badge">Weekly</div>
+      </div>
+      <div class="service-card-body">
+        <div class="service-time">⚡ 10:00 AM – 1:00 PM</div>
+        <div class="service-desc">The flagship prophetic meeting where the gift of prophecy flows freely. Personal prophecies, breakthrough prayers, and divine direction.</div>
+      </div>
+      <a href="https://wa.me/233243087949?text=Hello%2C%20I%27d%20like%20to%20attend%20the%20Monday%20Prophetic%20Service" target="_blank" class="service-action">
+        <span>Register for Prophecy →</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+    <div class="service-card">
+      <div class="service-card-header">
+        <div>
+          <div class="service-day">Tuesday – Friday</div>
+          <div class="service-name">Daily Meetings</div>
+        </div>
+        <div class="service-badge">Daily</div>
+      </div>
+      <div class="service-card-body">
+        <div class="service-time">📖 9:00 AM – 2:00 PM</div>
+        <div class="service-desc">Spiritual development and discipleship. Deep Bible study, prayer, and equipping for the work of ministry.</div>
+      </div>
+    </div>
+
+    <!-- PROGRAMMES -->
+    <div class="programs-section">
+      <div class="section-tag" style="margin-top:40px;">Special Programmes</div>
+      <h3 class="section-title" style="font-size:clamp(22px,5vw,32px);">Annual <span class="italic">Events</span></h3>
+
+      <div class="program-card">
+        <div class="program-icon">✝️</div>
+        <div class="program-info">
+          <div class="program-name">Jesus Crusade</div>
+          <div class="program-desc">Multi-day outdoor evangelism crusade. Signs, wonders, mass salvations. Open to all.</div>
+        </div>
+      </div>
+      <div class="program-card">
+        <div class="program-icon">🔥</div>
+        <div class="program-info">
+          <div class="program-name">5 Days of Glory</div>
+          <div class="program-desc">Five intense days of glory encounters, breakthrough, and prophetic activation.</div>
+        </div>
+      </div>
+      <div class="program-card">
+        <div class="program-icon">🎵</div>
+        <div class="program-info">
+          <div class="program-name">Worship Night</div>
+          <div class="program-desc">An evening of uninterrupted worship featuring Everflourishing Choir, SWAG, and guest ministers.</div>
+        </div>
+      </div>
+      <div class="program-card">
+        <div class="program-icon">🌍</div>
+        <div class="program-info">
+          <div class="program-name">Operation Church Everywhere</div>
+          <div class="program-desc">Our church planting initiative — taking the gospel to every community, region, and nation.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     PAGE: MEDIA
+══════════════════════════════════════════════ -->
+<div id="page-media" class="page">
+  <section class="section">
+    <div class="section-tag">Media</div>
+    <h2 class="section-title">Photos & <span class="italic">Events</span></h2>
+    <div class="gold-line" style="margin-bottom:24px;"></div>
+
+    <div class="media-tabs">
+      <button class="media-tab active" onclick="switchTab('gallery')">Gallery</button>
+      <button class="media-tab" onclick="switchTab('events')">Events</button>
+    </div>
+
+    <!-- GALLERY -->
+    <div class="gallery-grid active" id="tab-gallery">
+      <div class="gallery-item" onclick="openLightbox('https://raw.githubusercontent.com/kingjudecole/wgc-media/main/pic_3.jpg')">
+        <img src="https://raw.githubusercontent.com/kingjudecole/wgc-media/main/pic_3.jpg" alt="Jesus Crusade"/>
+        <div class="gallery-item-overlay"></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('https://raw.githubusercontent.com/kingjudecole/wgc-media/main/IPic_1.jpg')">
+        <img src="https://raw.githubusercontent.com/kingjudecole/wgc-media/main/IPic_1.jpg" alt="Prophet Praying"/>
+        <div class="gallery-item-overlay"></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('https://raw.githubusercontent.com/kingjudecole/wgc-media/main/Pic_2.jpg')">
+        <img src="https://raw.githubusercontent.com/kingjudecole/wgc-media/main/Pic_2.jpg" alt="Prophet Ministering"/>
+        <div class="gallery-item-overlay"></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('https://raw.githubusercontent.com/kingjudecole/wgc-media/main/pic_7.jpg')">
+        <img src="https://raw.githubusercontent.com/kingjudecole/wgc-media/main/pic_7.jpg" alt="Worship Team"/>
+        <div class="gallery-item-overlay"></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('https://raw.githubusercontent.com/kingjudecole/wgc-media/main/pic_6.jpg')">
+        <img src="https://raw.githubusercontent.com/kingjudecole/wgc-media/main/pic_6.jpg" alt="Leadership"/>
+        <div class="gallery-item-overlay"></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('https://raw.githubusercontent.com/kingjudecole/wgc-media/main/pic_4.jpg')">
+        <img src="https://raw.githubusercontent.com/kingjudecole/wgc-media/main/pic_4.jpg" alt="Jesus Festival"/>
+        <div class="gallery-item-overlay"></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('https://raw.githubusercontent.com/kingjudecole/wgc-media/main/pic_9.jpg')">
+        <img src="https://raw.githubusercontent.com/kingjudecole/wgc-media/main/pic_9.jpg" alt="Jesus Festival Performance"/>
+        <div class="gallery-item-overlay"></div>
+      </div>
+    </div>
+
+    <!-- EVENTS -->
+    <div class="events-list" id="tab-events">
+      <div class="event-card">
+        <img src="https://raw.githubusercontent.com/kingjudecole/wgc-media/main/Playback.jpg" alt="Worship Night"/>
+        <div class="event-card-body">
+          <div class="event-tag">Jesus Festival 2024</div>
+          <div class="event-title">Worship Night</div>
+          <div class="event-desc">A night of uninterrupted worship featuring Team Eternity Ghana, Ps Cynthia Maccauley, Everflourishing Choir, SWAG, and more.</div>
+        </div>
+      </div>
+      <div class="event-card">
+        <img src="https://raw.githubusercontent.com/kingjudecole/wgc-media/main/Our_Year_Of_Souls.jpg" alt="Year of Souls"/>
+        <div class="event-card-body">
+          <div class="event-tag">Annual Theme 2025</div>
+          <div class="event-title">Our Year of Souls</div>
+          <div class="event-desc">Mark 16:15–20. The mandate for 2025: reach more souls, plant more churches, and see God's glory fill the earth.</div>
+        </div>
+      </div>
+      <div class="event-card">
+        <img src="https://raw.githubusercontent.com/kingjudecole/wgc-media/main/pic_3.jpg" alt="Jesus Crusade"/>
+        <div class="event-card-body">
+          <div class="event-tag">Evangelism</div>
+          <div class="event-title">Jesus Crusade</div>
+          <div class="event-desc">Multi-day outdoor crusade bringing the gospel to the streets of Accra. Signs and wonders, mass salvations, and healings.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     PAGE: BOOKS
+══════════════════════════════════════════════ -->
+<div id="page-books" class="page">
+  <section class="section">
+    <div class="section-tag">Kingdom Resources</div>
+    <h2 class="section-title">Books by <span class="italic">Prophet Manasseh</span></h2>
+    <div class="gold-line" style="margin-bottom:24px;"></div>
+
+    <div class="amazon-banner" onclick="window.open('https://www.amazon.com/s?k=Prophet+Prince+Manasseh+Atsu','_blank')">
+      <img src="https://raw.githubusercontent.com/kingjudecole/wgc-media/main/Available_On_Amazon.jpg" alt="Available on Amazon"/>
+    </div>
+    <p style="font-size:12px;color:var(--gray);text-align:center;margin:8px 0 24px;">Tap to find all books on Amazon · Also available via WhatsApp</p>
+
+    <div class="books-grid">
+      <div class="book-card">
+        <div class="book-cover">
+          <img src="https://raw.githubusercontent.com/kingjudecole/wgc-media/main/The_Blueprint_of_Ministry.jpg" alt="The Blueprint of Ministry"/>
+        </div>
+        <div class="book-info">
+          <div class="book-title">The Blueprint of Ministry</div>
+          <div class="book-author">Prophet Prince Manasseh Atsu</div>
+        </div>
+        <a href="https://wa.me/233243087949?text=Hello%2C%20I%27d%20like%20to%20order%20%22The%20Blueprint%20of%20Ministry%22" target="_blank" class="book-btn">Order via WhatsApp</a>
+      </div>
+
+      <div class="book-card">
+        <div class="book-cover">
+          <img src="https://raw.githubusercontent.com/kingjudecole/wgc-media/main/Discerning_The_Lord_s_Body_The_Reason_Believers_Are_Weak__Sick_and_Die.jpg" alt="Discerning the Lord's Body"/>
+        </div>
+        <div class="book-info">
+          <div class="book-title">Discerning the Lord's Body</div>
+          <div class="book-author">Prophet Prince Manasseh Atsu</div>
+        </div>
+        <a href="https://wa.me/233243087949?text=Hello%2C%20I%27d%20like%20to%20order%20%22Discerning%20the%20Lord%27s%20Body%22" target="_blank" class="book-btn">Order via WhatsApp</a>
+      </div>
+
+      <div class="book-card">
+        <div class="book-cover">
+          <img src="https://raw.githubusercontent.com/kingjudecole/wgc-media/main/Where_Is_The_Love_That_You_Promised.jpg" alt="Where Is The Love That You Promised"/>
+        </div>
+        <div class="book-info">
+          <div class="book-title">Where Is The Love That You Promised?</div>
+          <div class="book-author">Prophet Prince Manasseh Atsu</div>
+        </div>
+        <a href="https://wa.me/233243087949?text=Hello%2C%20I%27d%20like%20to%20order%20%22Where%20Is%20The%20Love%20That%20You%20Promised%22" target="_blank" class="book-btn">Order via WhatsApp</a>
+      </div>
+
+      <div class="book-card">
+        <div class="book-cover">
+          <img src="https://raw.githubusercontent.com/kingjudecole/wgc-media/main/Win_or_Ruin.jpg" alt="Win or Ruin"/>
+        </div>
+        <div class="book-info">
+          <div class="book-title">Win or Ruin</div>
+          <div class="book-author">Prophet Prince Manasseh Atsu</div>
+        </div>
+        <a href="https://wa.me/233243087949?text=Hello%2C%20I%27d%20like%20to%20order%20%22Win%20or%20Ruin%22" target="_blank" class="book-btn">Order via WhatsApp</a>
+      </div>
+    </div>
+
+    <div style="background:var(--navy);border:1px solid rgba(201,168,76,.2);border-radius:20px;padding:24px;margin-top:32px;text-align:center;">
+      <p style="font-size:14px;color:var(--gray);margin-bottom:16px;">To order physical copies or for bulk orders, contact us directly</p>
+      <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
+        <a href="tel:+233302318294" class="btn-outline" style="font-size:13px;padding:10px 20px;">📞 0302 318 294</a>
+        <a href="https://wa.me/233243087949?text=Hello%2C%20I%27d%20like%20to%20order%20books" target="_blank" class="btn-primary" style="font-size:13px;padding:10px 20px;">WhatsApp Order</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     PAGE: CONTACT
+══════════════════════════════════════════════ -->
+<div id="page-contact" class="page">
+  <section class="section">
+    <div class="section-tag">Get in Touch</div>
+    <h2 class="section-title">Visit <span class="italic">Watered Garden</span></h2>
+    <div class="gold-line" style="margin-bottom:24px;"></div>
+
+    <div class="contact-hero">
+      <img src="https://raw.githubusercontent.com/kingjudecole/wgc-media/main/pic_7.jpg" alt="Watered Garden Church"/>
+      <div class="contact-hero-overlay">
+        <div class="contact-hero-title">Come As You Are</div>
+        <div class="contact-hero-sub">The door is always open. His glory flows every service.</div>
+      </div>
+    </div>
+
+    <div class="contact-methods">
+      <a href="tel:+233302318294" class="contact-card">
+        <div class="contact-icon">📞</div>
+        <div class="contact-info">
+          <div class="contact-label">Phone</div>
+          <div class="contact-value">+233 030 231 8294</div>
+        </div>
+      </a>
+      <a href="tel:+233247416946" class="contact-card">
+        <div class="contact-icon">📱</div>
+        <div class="contact-info">
+          <div class="contact-label">Mobile</div>
+          <div class="contact-value">+233 024 741 6946</div>
+        </div>
+      </a>
+      <a href="https://wa.me/233243087949" target="_blank" class="contact-card">
+        <div class="contact-icon">💬</div>
+        <div class="contact-info">
+          <div class="contact-label">WhatsApp</div>
+          <div class="contact-value">+233 024 308 7949</div>
+        </div>
+      </a>
+      <a href="mailto:wateredgardengh@gmail.com" class="contact-card">
+        <div class="contact-icon">✉️</div>
+        <div class="contact-info">
+          <div class="contact-label">Email</div>
+          <div class="contact-value">wateredgardengh@gmail.com</div>
+        </div>
+      </a>
+      <a href="https://maps.google.com/?q=A+982/17+Dansoman+Roundabout+Accra+Ghana" target="_blank" class="contact-card">
+        <div class="contact-icon">📍</div>
+        <div class="contact-info">
+          <div class="contact-label">Address</div>
+          <div class="contact-value">A 982/17, Dansoman Roundabout, Accra</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- SOCIAL MEDIA -->
+    <div class="social-section">
+      <div class="social-title">Follow Us Online</div>
+      <div class="social-grid">
+        <a href="https://facebook.com/wateredgardenchurch" target="_blank" class="social-btn">
+          <span>📘</span><small>Facebook</small>
+        </a>
+        <a href="https://instagram.com/wateredgardenchurch" target="_blank" class="social-btn">
+          <span>📸</span><small>Instagram</small>
+        </a>
+        <a href="https://youtube.com/@wateredgardenchurch" target="_blank" class="social-btn">
+          <span>📺</span><small>YouTube</small>
+        </a>
+        <a href="https://twitter.com/wateredgarden" target="_blank" class="social-btn">
+          <span>🐦</span><small>Twitter/X</small>
+        </a>
+        <a href="https://tiktok.com/@wateredgardenchurch" target="_blank" class="social-btn">
+          <span>🎵</span><small>TikTok</small>
+        </a>
+        <a href="https://wa.me/233243087949" target="_blank" class="social-btn">
+          <span>💬</span><small>WhatsApp</small>
+        </a>
+      </div>
+    </div>
+
+    <!-- BRANCHES -->
+    <div class="branches-section">
+      <div class="section-tag">Global Presence</div>
+      <h3 class="section-title" style="font-size:clamp(22px,5vw,32px);">Our <span class="italic">Branches</span></h3>
+      <div class="gold-line" style="margin-bottom:20px;"></div>
+
+      <div class="branch-item">
+        <div class="branch-flag">🇬🇭</div>
+        <div class="branch-info">
+          <div class="branch-name">Headquarters — Dansoman</div>
+          <div class="branch-location">A 982/17, Dansoman Roundabout, Accra</div>
+          <div class="branch-lead">Prophet Prince Manasseh Atsu</div>
+        </div>
+      </div>
+      <div class="branch-item">
+        <div class="branch-flag">🇬🇭</div>
+        <div class="branch-info">
+          <div class="branch-name">Tema Branch</div>
+          <div class="branch-location">Tema, Greater Accra Region</div>
+        </div>
+      </div>
+      <div class="branch-item">
+        <div class="branch-flag">🇬🇭</div>
+        <div class="branch-info">
+          <div class="branch-name">Kumasi Branch</div>
+          <div class="branch-location">Kumasi, Ashanti Region</div>
+        </div>
+      </div>
+      <div class="branch-item">
+        <div class="branch-flag">🇬🇭</div>
+        <div class="branch-info">
+          <div class="branch-name">Takoradi Branch</div>
+          <div class="branch-location">Takoradi, Western Region</div>
+        </div>
+      </div>
+      <div class="branch-item">
+        <div class="branch-flag">🇬🇧</div>
+        <div class="branch-info">
+          <div class="branch-name">London Branch</div>
+          <div class="branch-location">London, United Kingdom</div>
+        </div>
+      </div>
+      <div class="branch-item">
+        <div class="branch-flag">🇺🇸</div>
+        <div class="branch-info">
+          <div class="branch-name">Houston Branch</div>
+          <div class="branch-location">Houston, Texas, USA</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GOOGLE MAPS -->
+    <div style="margin-top:32px;border-radius:20px;overflow:hidden;border:1px solid rgba(201,168,76,.2);">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.9!2d-0.2417!3d5.5546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sDansoman+Roundabout+Accra!5e0!3m2!1sen!2sgh!4v1"
+        width="100%" height="240" style="border:0;display:block;" allowfullscreen="" loading="lazy">
+      </iframe>
+    </div>
+
+    <div style="text-align:center;padding:40px 0 20px;">
+      <p style="font-size:11px;color:var(--gray);letter-spacing:.06em;">© 2025 Watered Garden Church · Dansoman, Accra, Ghana</p>
+      <p style="font-size:11px;color:var(--gray-dark,#555);margin-top:4px;letter-spacing:.04em;">Where His Glory Flows</p>
+    </div>
+  </section>
+</div>
+
+<!-- BOTTOM NAV -->
+<nav id="bottom-nav">
+  <button class="nav-item active" onclick="navigate('home')" id="nav-home">
+    <span class="nav-icon">🏠</span>
+    <span class="nav-label">Home</span>
+  </button>
+  <button class="nav-item" onclick="navigate('about')" id="nav-about">
+    <span class="nav-icon">✝️</span>
+    <span class="nav-label">About</span>
+  </button>
+  <button class="nav-item" onclick="navigate('services')" id="nav-services">
+    <span class="nav-icon">📅</span>
+    <span class="nav-label">Services</span>
+  </button>
+  <button class="nav-item" onclick="navigate('media')" id="nav-media">
+    <span class="nav-icon">📸</span>
+    <span class="nav-label">Media</span>
+  </button>
+  <button class="nav-item" onclick="navigate('books')" id="nav-books">
+    <span class="nav-icon">📚</span>
+    <span class="nav-label">Books</span>
+  </button>
+  <button class="nav-item" onclick="navigate('contact')" id="nav-contact">
+    <span class="nav-icon">📍</span>
+    <span class="nav-label">Contact</span>
+  </button>
+</nav>
+
+<!-- FLOATING WHATSAPP -->
+<a id="whatsapp-fab" href="https://wa.me/233243087949?text=Hello%20Watered%20Garden%20Church%2C%20I%27d%20like%20to%20connect%20with%20you." target="_blank" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeLightbox()">
+  <button id="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightbox-img" src="" alt=""/>
+</div>
+
+<script>
+// ─── NAVIGATION ───
+function navigate(page) {
+  // Hide all pages
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.querySelectorAll('.desktop-nav-item').forEach(n => n.classList.remove('active'));
+
+  // Show target page
+  const target = document.getElementById('page-' + page);
+  if(target) {
+    target.classList.add('active');
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+
+  // Activate nav
+  const navBtn = document.getElementById('nav-' + page);
+  if(navBtn) navBtn.classList.add('active');
+
+  // Activate desktop nav
+  const desktopBtns = document.querySelectorAll('.desktop-nav-item');
+  const pageOrder = ['home','about','services','media','books','contact'];
+  const idx = pageOrder.indexOf(page);
+  if(idx >= 0 && desktopBtns[idx]) desktopBtns[idx].classList.add('active');
+}
+
+// ─── MEDIA TABS ───
+function switchTab(tab) {
+  document.querySelectorAll('.media-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-gallery').style.display = 'none';
+  document.getElementById('tab-events').style.display = 'none';
+
+  if(tab === 'gallery') {
+    document.getElementById('tab-gallery').style.display = 'grid';
+    document.querySelectorAll('.media-tab')[0].classList.add('active');
+  } else {
+    document.getElementById('tab-events').style.display = 'block';
+    document.querySelectorAll('.media-tab')[1].classList.add('active');
+  }
+}
+
+// ─── LIGHTBOX ───
+function openLightbox(src) {
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closeLightbox(); });
+
+// ─── SCROLL HEADER ───
+window.addEventListener('scroll', () => {
+  const header = document.getElementById('header');
+  if(window.scrollY > 20) header.classList.add('scrolled');
+  else header.classList.remove('scrolled');
+});
+
+// ─── HERO IMAGE LOAD ───
+const heroBg = document.getElementById('heroBg');
+const heroImg = new Image();
+heroImg.onload = () => {
+  heroBg.style.backgroundImage = `url('${heroImg.src}')`;
+  heroBg.classList.add('loaded');
+};
+heroImg.src = 'https://raw.githubusercontent.com/kingjudecole/wgc-media/main/IPic_1.jpg';
+
+// ─── STAT COUNTERS ───
+function animateCounter(el) {
+  const target = parseInt(el.dataset.count);
+  const suffix = el.dataset.suffix || '';
+  const duration = 2000;
+  const step = target / (duration / 16);
+  let current = 0;
+  const timer = setInterval(() => {
+    current += step;
+    if(current >= target) {
+      current = target;
+      clearInterval(timer);
+    }
+    el.textContent = (target >= 1000 ? Math.floor(current).toLocaleString() : Math.floor(current)) + suffix;
+  }, 16);
+}
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      animateCounter(entry.target);
+      observer.unobserve(entry.target);
+    }
+  });
+}, {threshold: 0.5});
+
+document.querySelectorAll('[data-count]').forEach(el => observer.observe(el));
+
+// ─── LIVE SERVICE INDICATOR ───
+function checkLiveService() {
+  const now = new Date();
+  const day = now.getDay(); // 0=Sun
+  const hour = now.getHours();
+  const min = now.getMinutes();
+  const time = hour * 60 + min;
+
+  if(day === 0) {
+    const s1Start = 8*60+45, s1End = 10*60+45;
+    const s2Start = 11*60, s2End = 13*60;
+    if(time >= s1Start && time <= s1End) {
+      document.getElementById('liveIndicator1').innerHTML = '<span class="live-dot"></span> LIVE NOW';
+      document.getElementById('liveIndicator1').className = 'service-badge live';
+    } else if(time >= s2Start && time <= s2End) {
+      document.getElementById('liveIndicator1').textContent = 'First Service Done';
+    }
+  }
+}
+checkLiveService();
+
+// ─── LOADER ───
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('loader').classList.add('hide');
+  }, 1800);
+});
+
+// Init gallery tab
+document.getElementById('tab-gallery').style.display = 'grid';
+document.getElementById('tab-events').style.display = 'none';
+</script>
+</body>
 </html>
