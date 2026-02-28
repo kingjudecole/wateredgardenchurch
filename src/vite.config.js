@@ -6,8 +6,8 @@ export default defineConfig({
   plugins: [react()],
 
   // ─── GitHub Pages base path ───────────────────────────────────────────────
-  // Must match your repo name exactly: https://kingjudecole.github.io/wateredgardenchurch/
-  base: '/church-website/',
+  // Must match your repo name exactly: https://kingjudecole.github.io/church-website/
+  base: '/wateredgardenchurch/',
 
   build: {
     outDir: 'dist',
