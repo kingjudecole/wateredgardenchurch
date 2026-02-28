@@ -1409,10 +1409,12 @@ function checkLiveService() {
 checkLiveService();
 
 // ─── LOADER ───
+// Hide after 2 seconds regardless of image loading state
+setTimeout(() => {
+  document.getElementById('loader').classList.add('hide');
+}, 2000);
 window.addEventListener('load', () => {
-  setTimeout(() => {
-    document.getElementById('loader').classList.add('hide');
-  }, 1800);
+  document.getElementById('loader').classList.add('hide');
 });
 
 // Init gallery tab
