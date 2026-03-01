@@ -685,6 +685,69 @@ footer{background:var(--ink);padding:64px 48px 48px;display:flex;flex-direction:
   .hero-scroll{display:none;}
   #chatbot-fab{right:16px;bottom:20px;}
 }
+
+/* ═══ GLOBAL PRAYER COMMAND ═══ */
+#prayer-command{background:var(--ink4);position:relative;overflow:hidden;padding:120px 48px;}
+#prayer-command::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 90% at 50% 60%,rgba(11,122,117,.1) 0%,transparent 65%);}
+.prayer-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.prayer-map{position:relative;aspect-ratio:16/9;background:var(--ink2);border:1px solid var(--teal-border);overflow:hidden;}
+.prayer-map-bg{position:absolute;inset:0;background:linear-gradient(135deg,var(--tealdark) 0%,var(--ink2) 100%);}
+.prayer-grid-lines{position:absolute;inset:0;background-image:linear-gradient(rgba(11,122,117,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(11,122,117,.08) 1px,transparent 1px);background-size:32px 32px;}
+.prayer-dot{position:absolute;width:8px;height:8px;border-radius:50%;background:var(--teal);transform:translate(-50%,-50%);}
+.prayer-dot::after{content:'';position:absolute;inset:-5px;border-radius:50%;border:1px solid var(--teal);animation:apulse 2.5s ease infinite;}
+.prayer-dot:nth-child(3){top:28%;left:22%;}
+.prayer-dot:nth-child(4){top:58%;left:48%;}
+.prayer-dot:nth-child(5){top:35%;left:72%;}
+.prayer-dot:nth-child(6){top:55%;left:80%;}
+.prayer-dot:nth-child(7){top:65%;left:35%;}
+.prayer-dot:nth-child(8){top:20%;left:55%;}
+.prayer-counter-row{position:absolute;bottom:0;left:0;right:0;background:rgba(5,8,15,.88);padding:16px 24px;display:flex;gap:0;align-items:stretch;border-top:1px solid var(--teal-border);}
+.prayer-counter-item{flex:1;text-align:center;padding:0 16px;border-right:1px solid var(--teal-border);}
+.prayer-counter-item:last-child{border-right:none;}
+.prayer-counter-num{font-family:"Cormorant Garamond",serif;font-size:24px;font-weight:700;color:var(--teallt);line-height:1;margin-bottom:4px;}
+.prayer-counter-label{font-size:9px;letter-spacing:.2em;color:var(--muted);text-transform:uppercase;}
+.prayer-tag{display:inline-flex;align-items:center;gap:8px;background:var(--tealpale);border:1px solid var(--teal-border);padding:6px 14px;font-size:10px;letter-spacing:.15em;color:var(--teallt);text-transform:uppercase;font-weight:700;margin-bottom:16px;}
+.prayer-form{margin-top:28px;display:flex;flex-direction:column;gap:10px;}
+.prayer-input{padding:14px 18px;background:rgba(255,255,255,.04);border:1px solid var(--teal-border);color:var(--parch);font-size:14px;font-family:"DM Sans",sans-serif;outline:none;transition:border-color .3s;resize:none;}
+.prayer-input:focus{border-color:var(--teal);}
+.prayer-input::placeholder{color:rgba(237,232,223,.3);}
+/* ═══ ONLINE MISSIONS ═══ */
+#online-missions{background:var(--light-bg);padding:100px 48px;position:relative;overflow:hidden;}
+#online-missions::after{content:'';position:absolute;top:0;right:0;width:4px;height:100%;background:linear-gradient(to bottom,var(--teal),var(--gold));}
+.missions-header{text-align:center;max-width:640px;margin:0 auto 72px;}
+.missions-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#E8E5DF;}
+.mission-card{background:var(--light-bg);padding:48px 36px;transition:background .4s;position:relative;overflow:hidden;}
+.mission-card:hover{background:var(--light-bg2);}
+.mission-card::before{content:'';position:absolute;left:0;top:0;height:0;width:2px;background:var(--teal);transition:height .5s;}
+.mission-card:hover::before{height:100%;}
+.mission-num{font-family:"Cormorant Garamond",serif;font-size:72px;font-weight:700;color:#E8E5DF;line-height:1;margin-bottom:16px;}
+.mission-title{font-family:"Cormorant Garamond",serif;font-size:22px;font-weight:700;color:var(--light-ink);margin-bottom:10px;}
+.mission-body{font-size:14px;line-height:1.8;color:var(--light-muted);}
+.mission-teal{font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--teal);text-transform:uppercase;margin-top:16px;}
+.missions-bottom{margin-top:64px;background:var(--light-ink);padding:48px;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;}
+.missions-bottom-text{font-family:"Cormorant Garamond",serif;font-size:28px;font-weight:700;color:#fff;line-height:1.2;}
+.missions-bottom-sub{font-size:13px;color:rgba(255,255,255,.45);margin-top:8px;}
+/* ═══ ABOUT THE MANDATE ═══ */
+#about-mandate{background:var(--ink);position:relative;overflow:hidden;padding:120px 48px;}
+.about-parallax-img{position:absolute;right:0;top:0;width:48%;height:100%;overflow:hidden;opacity:.18;}
+.about-parallax-img img{width:100%;height:100%;object-fit:cover;object-position:top;}
+.about-parallax-img::before{content:'';position:absolute;inset:0;background:linear-gradient(to right,var(--ink) 0%,transparent 50%,var(--ink) 100%);z-index:1;}
+.about-content{position:relative;z-index:2;max-width:620px;}
+.about-timeline{margin-top:56px;display:flex;flex-direction:column;}
+.about-tl-item{display:grid;grid-template-columns:68px 1fr;gap:20px;padding:24px 0;border-bottom:1px solid var(--borderl);position:relative;}
+.about-tl-line{position:absolute;left:33px;top:0;bottom:0;width:1px;background:var(--teal-border);z-index:0;}
+.about-tl-year{font-family:"Cormorant Garamond",serif;font-size:20px;font-weight:700;color:var(--teal);line-height:1;padding-top:6px;position:relative;}
+.about-tl-dot{position:absolute;left:30px;top:28px;width:8px;height:8px;border-radius:50%;background:var(--teal);z-index:1;}
+.about-tl-title{font-family:"Cormorant Garamond",serif;font-size:19px;font-weight:600;color:var(--white);margin-bottom:5px;}
+.about-tl-desc{font-size:13px;line-height:1.75;color:var(--muted);}
+@media(max-width:900px){
+  .prayer-grid{grid-template-columns:1fr;gap:48px;}
+  .missions-grid{grid-template-columns:1fr;}
+  .about-parallax-img{display:none;}
+  #prayer-command,#online-missions,#about-mandate{padding:72px 24px;}
+  .missions-bottom{flex-direction:column;text-align:center;}
+}
+
 </style>
 </head>
 <body>
@@ -708,6 +771,8 @@ footer{background:var(--ink);padding:64px 48px 48px;display:flex;flex-direction:
     <a href="#encounter" class="nav-link">Visit</a>
     <a href="#global" class="nav-link">Global</a>
     <a href="#resources" class="nav-link">Resources</a>
+    <a href="#prayer-command" class="nav-link">Prayer</a>
+    <a href="#about-mandate" class="nav-link">About</a>
     <a href="#discovery" class="nav-link">Blueprint</a>
   </div>
   <div class="nav-actions">
@@ -726,6 +791,8 @@ footer{background:var(--ink);padding:64px 48px 48px;display:flex;flex-direction:
   <a href="#encounter" class="mobile-link" onclick="closeMob()">Visit</a>
   <a href="#global" class="mobile-link" onclick="closeMob()">Global</a>
   <a href="#resources" class="mobile-link" onclick="closeMob()">Resources</a>
+  <a href="#prayer-command" class="mobile-link" onclick="closeMob()">Prayer</a>
+  <a href="#about-mandate" class="mobile-link" onclick="closeMob()">About</a>
   <a href="#discovery" class="mobile-link" onclick="closeMob()">Blueprint</a>
   <div class="mobile-nav-actions">
     <a href="#covenant" class="nav-btn-partner btn-magnetic" onclick="closeMob()">Partner / Donate</a>
@@ -976,9 +1043,9 @@ footer{background:var(--ink);padding:64px 48px 48px;display:flex;flex-direction:
   <div class="media-hub-grid">
     <div class="reveal-l">
       <div class="yt-frame-wrap">
-        <iframe src="https://www.youtube.com/embed/videoseries?list=UUWateredGardenChurch&rel=0&modestbranding=1&color=white" allowfullscreen loading="lazy" title="Watered Garden Church — Latest Messages"></iframe>
+        <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=prophetprincemanassehatsu4550&rel=0&modestbranding=1&color=white" allowfullscreen loading="lazy" title="Watered Garden Church — Latest Messages"></iframe>
       </div>
-      <div class="yt-label">Latest from the Prophet's channel</div>
+      <div class="yt-label"><span>Latest from</span> <a href="https://www.youtube.com/@prophetprincemanassehatsu4550" target="_blank" style="color:var(--teal);text-decoration:none;font-weight:700;">@ProphetPrinceManassehAtsu ↗</a></div>
     </div>
     <div class="media-sermons reveal-r">
       <div class="sermon-card">
@@ -986,7 +1053,7 @@ footer{background:var(--ink);padding:64px 48px 48px;display:flex;flex-direction:
         <div>
           <div class="sermon-title">The Architecture of the Spirit — Part III</div>
           <div class="sermon-meta">Monday Prophetic Service · 2025</div>
-          <div class="sermon-teal">▶ Watch Now</div>
+          <a href="https://www.youtube.com/@prophetprincemanassehatsu4550" target="_blank" class="sermon-teal" style="text-decoration:none;cursor:none;">▶ Watch on YouTube</a>
         </div>
       </div>
       <div class="sermon-card">
@@ -994,7 +1061,7 @@ footer{background:var(--ink);padding:64px 48px 48px;display:flex;flex-direction:
         <div>
           <div class="sermon-title">Discerning the Season of Your Visitation</div>
           <div class="sermon-meta">Jesus Festival 2024</div>
-          <div class="sermon-teal">▶ Watch Now</div>
+          <a href="https://www.youtube.com/@prophetprincemanassehatsu4550" target="_blank" class="sermon-teal" style="text-decoration:none;cursor:none;">▶ Watch on YouTube</a>
         </div>
       </div>
       <div class="sermon-card">
@@ -1002,7 +1069,7 @@ footer{background:var(--ink);padding:64px 48px 48px;display:flex;flex-direction:
         <div>
           <div class="sermon-title">The Covenant That Cannot Be Broken</div>
           <div class="sermon-meta">Sunday First Service · 2025</div>
-          <div class="sermon-teal">▶ Watch Now</div>
+          <a href="https://www.youtube.com/@prophetprincemanassehatsu4550" target="_blank" class="sermon-teal" style="text-decoration:none;cursor:none;">▶ Watch on YouTube</a>
         </div>
       </div>
       <div class="sermon-card">
@@ -1010,12 +1077,151 @@ footer{background:var(--ink);padding:64px 48px 48px;display:flex;flex-direction:
         <div>
           <div class="sermon-title">Operating in the Prophetic Blueprint</div>
           <div class="sermon-meta">5 Days of Glory · 2024</div>
-          <div class="sermon-teal">▶ Watch Now</div>
+          <a href="https://www.youtube.com/@prophetprincemanassehatsu4550" target="_blank" class="sermon-teal" style="text-decoration:none;cursor:none;">▶ Watch on YouTube</a>
         </div>
       </div>
       <div style="margin-top:8px;">
-        <a href="https://www.youtube.com/@WateredGardenChurch" target="_blank" class="btn-magnetic btn-teal btn-sm">View Full Channel →</a>
+        <a href="https://www.youtube.com/@prophetprincemanassehatsu4550" target="_blank" class="btn-magnetic btn-teal btn-sm">View Full Channel →</a>
       </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════ GLOBAL PRAYER COMMAND ═══════ -->
+<section id="prayer-command">
+  <div class="prayer-grid">
+    <div class="reveal-l">
+      <div class="prayer-tag">
+        <div style="width:6px;height:6px;border-radius:50%;background:var(--teallt);animation:ldot 1.5s infinite;"></div>
+        Live Prayer Intelligence
+      </div>
+      <div class="section-label">Global Prayer Command</div>
+      <h2 class="section-h2" style="color:var(--white);">The Earth is<br/><em>Covered in Prayer</em></h2>
+      <div class="teal-rule"></div>
+      <p class="section-body">Every prayer submitted to this ministry enters a covenant chain. From Dansoman to London, from Houston to across the continent — the altar never goes cold. Submit your request and receive prophetic agreement from the ministry.</p>
+      <div class="prayer-form">
+        <input type="text" class="prayer-input" placeholder="Your name"/>
+        <textarea class="prayer-input" rows="3" placeholder="Your prayer request or heart's cry..."></textarea>
+        <button class="btn-magnetic btn-teal" onclick="this.textContent='Request Submitted — The Altar is Agreed';this.style.background='var(--tealdark)';this.disabled=true;">Submit to the Prayer Altar</button>
+      </div>
+      <div style="margin-top:20px;">
+        <a href="https://wa.me/233243087949?text=Prayer%20Request%3A%20" target="_blank" style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);text-decoration:none;font-weight:700;border-bottom:1px solid var(--teal-border);padding-bottom:4px;">OR SEND DIRECTLY VIA WHATSAPP →</a>
+      </div>
+    </div>
+    <div class="reveal-r">
+      <div class="prayer-map">
+        <div class="prayer-map-bg"></div>
+        <div class="prayer-grid-lines"></div>
+        <!-- Prayer location dots -->
+        <div class="prayer-dot" style="top:28%;left:22%;"></div>
+        <div class="prayer-dot" style="top:58%;left:48%;animation-delay:.5s;"></div>
+        <div class="prayer-dot" style="top:35%;left:72%;animation-delay:1s;"></div>
+        <div class="prayer-dot" style="top:55%;left:80%;animation-delay:1.5s;"></div>
+        <div class="prayer-dot" style="top:65%;left:35%;animation-delay:.8s;"></div>
+        <div class="prayer-dot" style="top:20%;left:55%;animation-delay:1.3s;"></div>
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;z-index:2;">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:700;color:var(--teal);line-height:1;" id="prayerCount">2,847</div>
+          <div style="font-size:9px;letter-spacing:.25em;color:var(--muted);text-transform:uppercase;margin-top:4px;">Prayers Covered This Month</div>
+        </div>
+        <div class="prayer-counter-row">
+          <div class="prayer-counter-item"><div class="prayer-counter-num">6</div><div class="prayer-counter-label">Nations Active</div></div>
+          <div class="prayer-counter-item"><div class="prayer-counter-num">24/7</div><div class="prayer-counter-label">Prayer Coverage</div></div>
+          <div class="prayer-counter-item"><div class="prayer-counter-num">47</div><div class="prayer-counter-label">Requests Today</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ ONLINE MISSIONS ═══════ -->
+<section id="online-missions">
+  <div class="missions-header reveal">
+    <div class="section-label" style="justify-content:center;color:var(--teal);">Online Missions</div>
+    <h2 class="section-h2" style="color:var(--light-ink);text-align:center;">The Global<br/><em style="color:var(--teal);">Garden Family</em></h2>
+    <div class="teal-rule" style="margin:24px auto;"></div>
+    <p class="section-body" style="color:var(--light-muted);text-align:center;margin:0 auto;">Our digital family spans every timezone. Wherever you are, you are not alone — you are part of a global prophetic community walking the same covenant road.</p>
+  </div>
+  <div class="missions-grid">
+    <div class="mission-card reveal">
+      <div class="mission-num">01</div>
+      <div class="mission-title">Digital Discipleship</div>
+      <p class="mission-body">Full prophetic training and discipleship delivered online — live sessions, archived teachings, and one-on-one mentorship through the digital platform.</p>
+      <div class="mission-teal">Access the Academy →</div>
+    </div>
+    <div class="mission-card reveal">
+      <div class="mission-num">02</div>
+      <div class="mission-title">Global Broadcast Ministry</div>
+      <p class="mission-body">The Prophet's voice reaches across continents via YouTube, Facebook Live, and Mixlr. Every service is a global gathering. Every word is carried to the nations.</p>
+      <a href="https://www.youtube.com/@prophetprincemanassehatsu4550" target="_blank" style="text-decoration:none;" class="mission-teal">Watch Live →</a>
+    </div>
+    <div class="mission-card reveal">
+      <div class="mission-num">03</div>
+      <div class="mission-title">Covenant Partnership Network</div>
+      <p class="mission-body">Thousands of Kingdom partners co-labouring with the ministry from across the world. Sowing into the mandate, reaping the covenant harvest — together.</p>
+      <div class="mission-teal" style="cursor:none;" onclick="openMemberModal()">Join the Network →</div>
+    </div>
+  </div>
+  <div class="missions-bottom reveal">
+    <div>
+      <div class="missions-bottom-text">Join the Global<br/>Garden Family.</div>
+      <div class="missions-bottom-sub">Register as an online member — free access to teachings, prayer resources, and the digital community.</div>
+    </div>
+    <button class="btn-magnetic btn-teal" onclick="openMemberModal()">Create My Member Profile</button>
+  </div>
+</section>
+
+<!-- ═══════ ABOUT THE MANDATE ═══════ -->
+<section id="about-mandate">
+  <div class="about-parallax-img">
+    <img src="https://raw.githubusercontent.com/kingjudecole/wgc-media/main/IPic%201.jpg" alt="Prophet Prince Manasseh Atsu"/>
+    <div style="position:absolute;inset:0;background:linear-gradient(to right,var(--ink) 0%,transparent 50%,var(--ink) 100%);z-index:1;"></div>
+  </div>
+  <div class="about-content">
+    <div class="section-label reveal">About the Mandate</div>
+    <h2 class="section-h2 reveal">The Prophet's<br/><em>Heart &amp; History</em></h2>
+    <div class="teal-rule reveal"></div>
+    <p class="section-body reveal">Prophet Prince Manasseh Atsu is not a man who stumbled into ministry — he was summoned by a Voice that does not make mistakes. For over three decades he has walked the narrow path of prophetic obedience, paying the price that most are unwilling to pay, to carry a glory that most cannot hold.</p>
+    <div class="about-timeline reveal">
+      <div class="about-tl-item">
+        <div class="about-tl-line"></div>
+        <div class="about-tl-dot"></div>
+        <div class="about-tl-year">1989</div>
+        <div>
+          <div class="about-tl-title">The Founding — Dansoman, Accra</div>
+          <div class="about-tl-desc">Watered Garden Church established in Dansoman with a small but fire-filled congregation. The prophetic mandate declared: reach every community, in every nation, in every generation.</div>
+        </div>
+      </div>
+      <div class="about-tl-item">
+        <div class="about-tl-line"></div>
+        <div class="about-tl-dot"></div>
+        <div class="about-tl-year">2000s</div>
+        <div>
+          <div class="about-tl-title">Operation Church Everywhere Launched</div>
+          <div class="about-tl-desc">The church planting mandate intensified — daughter churches established across the Ashanti, Western, and Greater Accra regions. The model: raise prophetic leaders, not religious dependents.</div>
+        </div>
+      </div>
+      <div class="about-tl-item">
+        <div class="about-tl-line"></div>
+        <div class="about-tl-dot"></div>
+        <div class="about-tl-year">2010s</div>
+        <div>
+          <div class="about-tl-title">International Expansion — UK &amp; USA</div>
+          <div class="about-tl-desc">The London and Houston branches established. The Prophet's prophetic ministry recognized on the international stage — conferences, crusades, and healing meetings across two continents.</div>
+        </div>
+      </div>
+      <div class="about-tl-item">
+        <div class="about-tl-line"></div>
+        <div class="about-tl-dot"></div>
+        <div class="about-tl-year">2024+</div>
+        <div>
+          <div class="about-tl-title">The Year of Souls — The Digital Mandate</div>
+          <div class="about-tl-desc">The ministry enters its most expansive era. Jesus Festivals, 5 Days of Glory, broadcast ministry reaching 50,000+ souls. The digital cathedral rises. The mandate accelerates.</div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:40px;" class="reveal">
+      <a href="https://wa.me/233243087949?text=I%27d%20like%20to%20know%20more%20about%20the%20ministry" target="_blank" class="btn-magnetic btn-teal">Reach the Ministry</a>
     </div>
   </div>
 </section>
@@ -1219,6 +1425,9 @@ footer{background:var(--ink);padding:64px 48px 48px;display:flex;flex-direction:
         <a href="#global" class="ft-link">Global Presence</a>
         <a href="#covenant" class="ft-link">Partnership</a>
         <a href="#altar-live" class="ft-link">Live Streams</a>
+        <a href="#prayer-command" class="ft-link">Prayer Command</a>
+        <a href="#about-mandate" class="ft-link">About the Mandate</a>
+        <a href="#online-missions" class="ft-link">Online Missions</a>
       </div>
       <div>
         <div class="ft-col-title">Resources</div>
